@@ -1,0 +1,8 @@
+{
+    "name": "Sayi_Tahmini_oyunu",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "Giray Aktaş",
+    "contributors": [],
+    "dependencies": {}
+}

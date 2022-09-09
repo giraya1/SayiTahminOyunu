@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var rasgelesayi = parseInt(Math.random()*100+1);
+        var kacDeneme=0;
+        function kontrolet(){
+            var sayiStr = document.getElementById("sayi").value;
+            var sayi = parseInt(sayiStr);
+            if(isNaN(sayi)){
+                alert("Lütfen sayı giriniz");
+                return;
+            }
+            kacDeneme++;
+            if(sayi<rasgelesayi){
+                alert("Daha Büyük Bir Sayı Giriniz");
+            }
+            else if(sayi>rasgelesayi){
+                alert("Daha Küçük Bir Sayı Giriniz");
+            }
+            else{
+                document.getElementById("sonuc").innerHTML = kacDeneme+" denemede sonucu bildiniz.";
+                document.getElementById("btnyeniden").style.display="inline-block";
+                document.getElementById("btnkontrol").disabled =true;
+            }
+            
+        }
+        function yenidenbasla(){
+            rasgelesayi = parseInt(Math.random()*100+1);
+            console.log(rasgelesayi);
+            kacDeneme=0;
+                document.getElementById("btnyeniden").style.display="none";
+                document.getElementById("btnkontrol").disabled =false;
+            
+            
+        }
+        </script>
+</head>
+<body onload="">
+<h1> Sayı Tahmin Oyunu</h1>
+<p> 1 ile 100 arasında bir sayı tutulmuştur. Lütfen bu sayıyı tahmin edin.</p>
+<label> Sayı Girin </label>
+<input type="tel" id="sayi">
+<br/>
+<div style="margin: 15px 0;">
+<button id="btnkontrol" onclick="kontrolet();">Kontol Et</button>
+<button id="btnyeniden" onclick="yenidenbasla();" style="display:none;">Yeniden Başlat</button>
+</div>
+<div id="sonuc">
+</div>
+</body>
+</html>
